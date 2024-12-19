@@ -57,7 +57,7 @@ class rundeck::cli (
   Optional[String[8]] $token = undef,
   Hash[String, Rundeck::Project] $projects = {},
 ) {
-  ensure_resource('package', 'jq', { 'ensure' => 'present' })
+  ensure_resource('package', 'jq', { 'ensure' => 'installed' })
 
   if $notify_conn_check {
     Class['rundeck::service'] ~> Exec['Check rundeck cli connection']

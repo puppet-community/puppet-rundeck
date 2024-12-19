@@ -12,7 +12,7 @@ describe 'rundeck::cli' do
       context 'with default parameters' do
         it { is_expected.to compile }
 
-        it { is_expected.to contain_package('jq').with(ensure: 'present') }
+        it { is_expected.to contain_package('jq').with(ensure: 'installed') }
 
         case facts[:os]['family']
         when 'RedHat'
